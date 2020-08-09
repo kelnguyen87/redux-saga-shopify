@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="006f4ed8-b338-423d-b45f-84bd48b588f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/containers/NavContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/NavContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/containers/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/ProductList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ShoppingCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/views/NavCartCount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/NavCartCount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/cartReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596855714669</updated>
-      <workItem from="1596855715809" duration="42380000" />
+      <workItem from="1596855715809" duration="43069000" />
     </task>
     <servers />
   </component>

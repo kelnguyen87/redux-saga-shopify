@@ -46,7 +46,7 @@ export default (props) => {
             )
     });
 
-    const cartItemCounntText = cartItemCount === 1? `item ${cartItemCount}`: `items ${cartItemCount}`;
+    const cartItemCounntText = cartItemCount <= 1? `item ${cartItemCount}`: `items ${cartItemCount}`;
 
     return(
     <div className="dropdown">

@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import NavBar from '../views/NavBar';
 import NavCartCount from '../views/NavCartCount';
 import * as actions from "../../actions";
 
-class NavContainer extends Component {
+const NavContainer = (props) =>{
+  return(
+      <nav className="navbar navbar-expand-md bg-dark navbar-dark mb-5">
+          <div className="container">
+              <NavBar />
+              <NavCartCount
+                  cartItems={props.cart}
+                  cartItemCount={props.cartItemCount}
+                  currency={props.usedCurrencyProp}
+                  handleRemoveCartItem={props.removeFromCart}
+              />
+          </div>
 
-  render() {
-      return(
-          <nav className="navbar navbar-expand-md bg-dark navbar-dark mb-5">
-              <div className="container">
-                  <NavBar />
-                  <NavCartCount
-                      cartItems={this.props.cart}
-                      cartItemCount={this.props.cartItemCount}
-                      currency={this.props.usedCurrencyProp}
-                      handleRemoveCartItem={this.props.removeFromCart}
-                  />
-              </div>
+      </nav>
+)
 
-          </nav>
-    )
-  }
 }
 
 const mapStateToProps = state => {
