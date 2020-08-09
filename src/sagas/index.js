@@ -124,7 +124,6 @@ function getCollection(collectionId) {
     };
     return  instance.post(null, data).then(response => {
         const dataCollection = response.data.data.collectionByHandle;
-        console.log(dataCollection);
         return fetchCollection(dataCollection);
 
     }).catch(error => {

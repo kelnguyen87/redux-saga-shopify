@@ -228,23 +228,38 @@ nav.navbar{
 
   .previewCartItem-content {
     padding-left: 15px;
-
+    flex-basis: 70%;
   }
 
   .previewCartItem-name {
-    margin-bottom: 10px;
+    margin-bottom: 3px;
     font-size: 14px;
 
   }
   .previewCartItem-desc{
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
   .previewCartItem-price {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-size: 14px;
     color: #666;
+    .price{
+      font-size: 16px;
+    }
   }
 
+  .previewCartItem-remove{
+    .cart__remove{
+      padding: 0;
+      border-radius: 5px;
+      width: 24px;
+      height: 24px;
+      line-height: 18px;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+    }
+  }
   .previewCartAction {
     padding: 1rem 0 0.5rem;
 

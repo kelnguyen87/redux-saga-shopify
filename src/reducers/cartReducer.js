@@ -98,7 +98,7 @@ const cartReducer = (state = initialState, action) => {
 
             let newCartItemUpdate = state.cartItem;
             if(product){
-                console.log(action.newCountValue,product);
+
                 if(action.newCountValue <= product.Quantity){
                     cartTotal = state.cartTotal + ( action.newCountValue - product.Count);
                     newCartItemUpdate = state.cartItem.map(

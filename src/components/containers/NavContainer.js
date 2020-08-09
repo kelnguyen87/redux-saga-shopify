@@ -3,19 +3,24 @@ import { connect } from 'react-redux';
 
 import NavBar from '../views/NavBar';
 import NavCartCount from '../views/NavCartCount';
+import * as actions from "../../actions";
 
 class NavContainer extends Component {
 
   render() {
-
       return(
-      <nav className="navbar navbar-expand-md bg-dark navbar-dark mb-5">
-          <div className="container">
-              <NavBar />
-              <NavCartCount cartItems={this.props.cart} cartTotal={this.props.cartTotal}  currency={this.props.usedCurrencyProp} />
-          </div>
+          <nav className="navbar navbar-expand-md bg-dark navbar-dark mb-5">
+              <div className="container">
+                  <NavBar />
+                  <NavCartCount
+                      cartItems={this.props.cart}
+                      cartItemCount={this.props.cartItemCount}
+                      currency={this.props.usedCurrencyProp}
+                      handleRemoveCartItem={this.props.removeFromCart}
+                  />
+              </div>
 
-      </nav>
+          </nav>
     )
   }
 }
@@ -23,9 +28,15 @@ class NavContainer extends Component {
 const mapStateToProps = state => {
     return {
         cart: state.cart.cartItem,
-        cartTotal: state.cart.cartTotal,
+        cartItemCount: state.cart.cartTotal,
         usedCurrencyProp: state.cart.usedCurrency
     }
 }
 
-export default connect(mapStateToProps)(NavContainer);
+const mapDispatchToProps = dispatch => {
+    return {
+        removeFromCart: (productId, count) => {dispatch(actions.removeFromCartAction(productId, count))}
+    };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(NavContainer);

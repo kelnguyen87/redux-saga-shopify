@@ -41,7 +41,7 @@ export default class ProductList extends Component {
 
     render() {
         const {loading, errorMsg ,products,collections} =  this.props;
-        console.log(collections);
+
         if (loading) return <Loading />;
 
         if(errorMsg.length) return <div className="container text-center"><p style={{ color: "red" }}>{errorMsg}</p></div>
