@@ -5,7 +5,9 @@ const initialState = {
     loading: false,
     productDetails: [],
     error: [],
-    collections:[],
+    collections:{
+        products: []
+    }
 }
 
 const productsReducer = (state = initialState, action) => {

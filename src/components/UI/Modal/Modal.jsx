@@ -3,6 +3,7 @@ import Backdrop from '../Backdrop/Backdrop';
 import PropTypes from 'prop-types';
 
 const modal = (props) => {
+    console.log(props);
     return (
         <React.Fragment>
             <Backdrop showBackDrop={props.showModal} closeSomething={props.closeModalClick}/>

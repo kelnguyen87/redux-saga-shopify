@@ -268,7 +268,18 @@ nav.navbar{
   overflow: hidden;
   outline: 0;
 }
+div.react-confirm-alert-overlay{
 
+}
+.react-confirm-alert-body {
+  width: 500px;
+  padding: 30px;
+  text-align: left;
+  background: #fff;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #666;
+}
 /* ------------- backdrop --------------*/
 .shop-backdrop {
   position: fixed;

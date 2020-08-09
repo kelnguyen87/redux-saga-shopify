@@ -5,23 +5,23 @@ import Price from "../helpers/Price";
 
 export default (props) => {
     const {cartItems,cartTotal} = props;
-   // console.log(props);
     const [listStatus, setlistStatus] = useState(false);
     const toggleList = () => {
         setlistStatus(!listStatus);
     }
 
     const cartItemsMarkUp = cartItems.map((product, index) =>{
+
         return (
             <li className="previewCartItem" key={product.Id} >
                 <div className="previewCartItem-image">
-                    <Link to={"/product-detail/" + product.Id}>
+                    <Link to={"/product-detail/" + product.Handle}>
                         <img className="card-img" alt={product.Title} src={product.ImageUrl} />
                     </Link>
                 </div>
                 <div className="previewCartItem-content">
                     <h5 className="previewCartItem-name">
-                        <Link to={"/product-detail/" + product.Id}>{product.Title}</Link>
+                        <Link to={"/product-detail/" + product.Handle}>{product.Title} </Link>
                     </h5>
                     <p className="previewCartItem-price">Quantity: {product.Count}</p>
                     <p className="previewCartItem-price">

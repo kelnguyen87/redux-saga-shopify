@@ -1,52 +1,151 @@
-import axios from 'axios';
 
-export function fetchProducts() {
-  return axios.get('/data/ProductData.json')
-      .then(response => {
-        return response.data.Products;
-      })
-      .catch(error => {
-        console.log(error);
-      });
 
-}
-/*
-export function fetchProductDetails(productUrl) {
+export default async function fetchSmart(data){
+    if(data.length){
+        return data.map((result, index) => {
 
-    return axios.get("/data/ProductData.json")
-        .then(response => {
-            const ProductDetail = response.data.Products.filter(product => {
-                return product.Id == productUrl
+            const nodes = result.node;
+            const nodesImages = nodes.images.edges;
+            const variants = nodes.variants.edges;
+
+            const allimages = nodesImages.map((result, index) => {
+                const nodes = result.node;
+                const imagePath = nodes.transformedSrc;
+                return {
+                    _imagePath: `${imagePath}`
+                };
+
             });
-            return ProductDetail;
-        })
-        .catch(error => {
-            console.log(error);
+
+            const allvariants = variants.map((result, index) => {
+                const nodes = result.node;
+
+                const price = nodes.price;
+                const compareAtPrice = nodes.compareAtPrice;
+                return {
+                    _price: `${price}`,
+                    _compareAtPrice: `${compareAtPrice}`
+                };
+
+            });
+
+            const ImageUrl2 = allimages[1] !== undefined ? `${allimages[1]._imagePath}`: null
+
+            return {
+                Id: `${nodes.id}`,
+                Handle: `${nodes.handle}`,
+                Title: `${nodes.title}`,
+                Vendor: `${nodes.vendor}`,
+                Inventory: 5,
+                Description: `${nodes.descriptionHtml}`,
+                Price: `${allvariants[0]._price}`,
+                Discount_price: `${allvariants[0]._compareAtPrice}`,
+                ImageUrl: `${allimages[0]._imagePath}`,
+                ImageUrl2: ImageUrl2,
+
+            };
+
+        });
+    }else{
+
+        const nodes = data;
+        const nodesImages = nodes.images.edges;
+        const variants = nodes.variants.edges;
+
+        const allimages = nodesImages.map((result, index) => {
+            const nodes = result.node;
+            const imagePath = nodes.transformedSrc;
+            return {
+                _imagePath: `${imagePath}`
+            };
+
         });
 
-}
+        const allvariants = variants.map((result, index) => {
+            const nodes = result.node;
 
-*/
-export function fetchProductDetails(id) {
-    return fetch("/data/ProductData.json")
-        .then(handleErrors)
-        .then(res => res.json())
-        .then(json => {
-            return json.Products.filter(product => {
-                if (product.Id === id) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            });
+            const price = nodes.price;
+            const compareAtPrice = nodes.compareAtPrice;
+            return {
+                _price: `${price}`,
+                _compareAtPrice: `${compareAtPrice}`
+            };
+
         });
-}
 
-// Handle HTTP errors since fetch won't.
-function handleErrors(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
+        const ImageUrl2 = allimages[1] !== undefined ? `${allimages[1]._imagePath}`: null;
+
+        return {
+            Id: `${nodes.id}`,
+            Handle: `${nodes.handle}`,
+            Title: `${nodes.title}`,
+            Vendor: `${nodes.vendor}`,
+            Inventory: 5,
+            productType: `${nodes.productType}`,
+            Description: `${nodes.descriptionHtml}`,
+            Price: `${allvariants[0]._price}`,
+            Discount_price: `${allvariants[0]._compareAtPrice}`,
+            ImageUrl: `${allimages[0]._imagePath}`,
+            ImageUrl2: ImageUrl2,
+
+        };
     }
-    return response;
+}
+
+export   function fetchCollection(data){
+    const nodes = data;
+    const nodesProduct = nodes.products.edges;
+    const originalSrc = nodes.image !== null ? nodes.image.originalSrc : null;
+
+    const getProduct = nodesProduct.map((result, index) => {
+        const nodes = result.node;
+        const nodesImages = nodes.images.edges;
+        const variants = nodes.variants.edges;
+
+        const allimages = nodesImages.map((result, index) => {
+            const nodes = result.node;
+            const imagePath = nodes.transformedSrc;
+            return {
+                _imagePath: `${imagePath}`
+            };
+
+        });
+
+        const allvariants = variants.map((result, index) => {
+            const nodes = result.node;
+
+            const price = nodes.price;
+            const compareAtPrice = nodes.compareAtPrice;
+            return {
+                _price: `${price}`,
+                _compareAtPrice: `${compareAtPrice}`
+            };
+
+        });
+
+        const ImageUrl2 = allimages[1] !== undefined ? `${allimages[1]._imagePath}`: null
+
+        return {
+            Id: `${nodes.id}`,
+            Handle: `${nodes.handle}`,
+            Title: `${nodes.title}`,
+            Vendor: `${nodes.vendor}`,
+            Inventory: 5,
+            Description: `${nodes.descriptionHtml}`,
+            Price: `${allvariants[0]._price}`,
+            Discount_price: `${allvariants[0]._compareAtPrice}`,
+            ImageUrl: `${allimages[0]._imagePath}`,
+            ImageUrl2: ImageUrl2,
+
+        };
+
+    });
+
+    return{
+        Id: `${nodes.id}`,
+        Title: `${nodes.title}`,
+        Description: `${nodes.description}`,
+        image: `${originalSrc}`,
+        products: getProduct
+    }
 }

@@ -10,11 +10,13 @@ const Collections = (props) => {
   useEffect(() => {
     dispatch(actions.getCollection(collectionId))
   }, [dispatch,collectionId]);
-
+  //console.log(props.collections.products);
+  //return true;
 
   return(
         <ProductList
-            products={props.collections}
+            collections={props.collections}
+            products={props.collections.products}
             loading={props.loading}
             usedCurrencyProp={props.usedCurrencyProp}
             cart={props.cart}

@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="006f4ed8-b338-423d-b45f-84bd48b588f9" name="Default Changelist" comment="" />
+    <list default="true" id="006f4ed8-b338-423d-b45f-84bd48b588f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/containers/CartList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/CartList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/containers/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/ProductList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Collections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Collections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/NavCartCount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/NavCartCount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/fetchProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/fetchProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stubs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/stateSchema.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/stateValidator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/cartReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/productsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +31,13 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1fnZFc8Zzld8fUTRSTDZjTOgGBn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../shopping-luannt4" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -43,31 +66,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596855714669</updated>
-      <workItem from="1596855715809" duration="29927000" />
+      <workItem from="1596855715809" duration="38806000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/sagas/index.js</url>
-          <line>109</line>
+          <line>16</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/sagas/index.js</url>
-          <line>151</line>
+          <line>57</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/sagas/index.js</url>
-          <line>295</line>
+          <line>199</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>

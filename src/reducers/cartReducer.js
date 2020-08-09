@@ -59,6 +59,8 @@ const cartReducer = (state = initialState, action) => {
                             Price:action.Price,
                             Discount_price:action.Discount_price,
                             ImageUrl:action.ImageUrl,
+                            Handle:action.Handle,
+                            Quantity:action.Quantity,
                             Count: 1
                         }
                     ]
@@ -89,20 +91,31 @@ const cartReducer = (state = initialState, action) => {
                 cartItem: []
             }
         case types.UPDATE_CART:
+            let updateMaxShowModal = state.productMaxShowModal;
+            let updateModalMessage = state.modalMessage;
             let product = state.cartItem.find(product => product.Id === action.productId)
             let cartTotal = state.cartTotal;
 
             let newCartItemUpdate = state.cartItem;
             if(product){
-                cartTotal = state.cartTotal - (product.Count - action.newCountValue);
-                newCartItemUpdate = state.cartItem.map(
-                    product => product.Id === action.productId ? {...product,Count: action.newCountValue}: product
-                )
+                console.log(action.newCountValue,product);
+                if(action.newCountValue <= product.Quantity){
+                    cartTotal = state.cartTotal + ( action.newCountValue - product.Count);
+                    newCartItemUpdate = state.cartItem.map(
+                        product => product.Id === action.productId ? {...product,Count: action.newCountValue}: product
+                    )
+                }else{
+                    updateMaxShowModal = !state.productMaxShowModal;
+                    updateModalMessage = 'Sorry! Your product order cannot exceed our stock';
+                }
+
             }
             return {
                 ...state,
                 cartItem: newCartItemUpdate,
-                cartTotal: cartTotal
+                cartTotal: cartTotal,
+                productMaxShowModal: updateMaxShowModal,
+                modalMessage: updateModalMessage
             }
         case types.CLOSE_MAX_PRODUCT_MODAL:
             return {

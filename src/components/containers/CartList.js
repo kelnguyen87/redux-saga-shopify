@@ -10,15 +10,13 @@ import CartTotal from '../views/CartTotal';
 
 class CartList extends Component {
 
-
     handleChangeCartQuantity = (field_value, productId) => {
-
         if(field_value > 0) this.props.updateCart(field_value, productId);
 
     }
 
-
     handleRemoveCartItem = (product) => {
+
         confirmAlert({
             customUI: ({onClose}) => {
                 return (

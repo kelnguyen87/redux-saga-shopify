@@ -1,6 +1,7 @@
 
 import { put, takeLatest, all,takeEvery, call } from 'redux-saga/effects';
 import axios from 'axios';
+import fetchSmart, {fetchCollection} from "../lib/fetchProducts";
 
 const BASE_URL = `https://wb-emarket.myshopify.com/api/graphql.json`;
 const ShopifyHeaderValue = '6189349bead0a951a2dc2c1b80475364';
@@ -11,100 +12,6 @@ const instance = axios.create({
         'Content-Type': 'application/json',
     }
 });
-
-function fetchProduct(data) {
-
-    if(data.length){
-        return data.map((result, index) => {
-
-            const nodes = result.node;
-            const nodesImages = nodes.images.edges;
-            const variants = nodes.variants.edges;
-
-            const allimages = nodesImages.map((result, index) => {
-                const nodes = result.node;
-                const imagePath = nodes.transformedSrc;
-                return {
-                    _imagePath: `${imagePath}`
-                };
-
-            });
-
-            const allvariants = variants.map((result, index) => {
-                const nodes = result.node;
-
-                const price = nodes.price;
-                const compareAtPrice = nodes.compareAtPrice;
-                return {
-                    _price: `${price}`,
-                    _compareAtPrice: `${compareAtPrice}`
-                };
-
-            });
-
-            const ImageUrl2 = allimages[1] !== undefined ? `${allimages[1]._imagePath}`: null
-
-            return {
-                Id: `${nodes.id}`,
-                Handle: `${nodes.handle}`,
-                Title: `${nodes.title}`,
-                Vendor: `${nodes.vendor}`,
-                Inventory: 5,
-                Description: `${nodes.descriptionHtml}`,
-                Price: `${allvariants[0]._price}`,
-                Discount_price: `${allvariants[0]._compareAtPrice}`,
-                ImageUrl: `${allimages[0]._imagePath}`,
-                ImageUrl2: ImageUrl2,
-
-            };
-
-        });
-    }else{
-
-        const nodes = data;
-        const nodesImages = nodes.images.edges;
-        const variants = nodes.variants.edges;
-
-        const allimages = nodesImages.map((result, index) => {
-            const nodes = result.node;
-            const imagePath = nodes.transformedSrc;
-            return {
-                _imagePath: `${imagePath}`
-            };
-
-        });
-
-        const allvariants = variants.map((result, index) => {
-            const nodes = result.node;
-
-            const price = nodes.price;
-            const compareAtPrice = nodes.compareAtPrice;
-            return {
-                _price: `${price}`,
-                _compareAtPrice: `${compareAtPrice}`
-            };
-
-        });
-
-        const ImageUrl2 = allimages[1] !== undefined ? `${allimages[1]._imagePath}`: null;
-
-        return {
-            Id: `${nodes.id}`,
-            Handle: `${nodes.handle}`,
-            Title: `${nodes.title}`,
-            Vendor: `${nodes.vendor}`,
-            Inventory: 5,
-            productType: `${nodes.productType}`,
-            Description: `${nodes.descriptionHtml}`,
-            Price: `${allvariants[0]._price}`,
-            Discount_price: `${allvariants[0]._compareAtPrice}`,
-            ImageUrl: `${allimages[0]._imagePath}`,
-            ImageUrl2: ImageUrl2,
-
-        };
-    }
-
-}
 
 function getProduct() {
     const data = {
@@ -148,11 +55,9 @@ function getProduct() {
             }
         }`
     };
-
     return  instance.post(null, data).then(response => {
         const data = response.data.data.products.edges;
-
-        return fetchProduct(data);
+        return fetchSmart(data);
     }).catch(error => {
         console.log(error);
     });
@@ -166,7 +71,7 @@ function getCollection(collectionId) {
              
               id
               description
-                title
+              title
                 image{
                 id
                 originalSrc
@@ -217,10 +122,10 @@ function getCollection(collectionId) {
         
         }`
     };
-
     return  instance.post(null, data).then(response => {
-        const data = response.data.data.collectionByHandle.products.edges;
-        return fetchProduct(data);
+        const dataCollection = response.data.data.collectionByHandle;
+        console.log(dataCollection);
+        return fetchCollection(dataCollection);
 
     }).catch(error => {
         console.log(error);
@@ -229,7 +134,6 @@ function getCollection(collectionId) {
 }
 
 function GetProductDetail(productId) {
-
     const data = {
         query: `{
             productByHandle(handle: "${productId}"){
@@ -286,7 +190,7 @@ function GetProductDetail(productId) {
     return  instance.post(null, data).then(response => {
         const data = response.data.data.productByHandle;
 
-        return fetchProduct(data);
+        return fetchSmart(data);
     }).catch(error => {
         console.log(error);
     });
@@ -296,6 +200,7 @@ function GetProductDetail(productId) {
 function* callGetProduct() {
     try {
         const data = yield call(getProduct);
+
         // dispatch a success action to the store with the new dog
         yield put({ type: "FETCH_PRODUCTS_SUCCESS", products: data  });
     } catch (error) {

@@ -40,13 +40,13 @@ export default class ProductList extends Component {
     }
 
     render() {
-        const {loading, errorMsg ,products} =  this.props;
-
+        const {loading, errorMsg ,products,collections} =  this.props;
+        console.log(collections);
         if (loading) return <Loading />;
 
         if(errorMsg.length) return <div className="container text-center"><p style={{ color: "red" }}>{errorMsg}</p></div>
 
-        if(products){
+        if(products.length){
             const totalProductCount = products.length;
             const [currentPageItemStart, currentPageItemEnd] = this.getPagedData();
             const currentPageProducts = products.slice(currentPageItemStart, currentPageItemEnd);
@@ -58,9 +58,19 @@ export default class ProductList extends Component {
             return (
                 <AddToCartContext.Provider value={{action: this.props.addToCartAction}}>
                     <div className="container home-container">
+                        {
+                            collections !== undefined && (
+                                <div className="row-collections mb-5">
+                                    <h4 className="mb-3 ">Collection {collections.Title}</h4>
+                                    {collections.image !== 'null' && <img className="card-img-top mb-3" alt={collections.Title} src={collections.image}/>}
+                                    <p>{collections.Description}</p>
+                                </div>
+                            )
+                        }
+
                         <div className="row justify-content-between mb-3">
                             <div className={'col-sm-6'}>
-                                <h3 className="center">Collection {this.props.pageName}</h3>
+                                {collections === undefined && <h3 className="center">All Product</h3>}
                             </div>
                             <div className={'col-sm-6 text-right'}>
                                 <ProductListSummary
@@ -83,7 +93,7 @@ export default class ProductList extends Component {
             );
         }
 
-
+        return true;
 
 
     }

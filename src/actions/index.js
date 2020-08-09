@@ -9,7 +9,8 @@ export function addToCartAction(product) {
     Price: product.Price,
     Discount_price: product.Discount_price,
     ImageUrl: product.ImageUrl,
-    Quantity: product.Inventory
+    Quantity: product.Inventory,
+    Handle: product.Handle
   };
 }
 
