@@ -35,8 +35,8 @@ class CurrenyConverter extends Component {
 
 const mapStateToProps = state => {
     return {
-        exchangeRatesProps: state.cart.exchangeRates,
-        usedCurrencyProp:state.cart.usedCurrency
+        exchangeRatesProps: state.currency.exchangeRates,
+        usedCurrencyProp:state.currency.usedCurrency
     }
 }
 

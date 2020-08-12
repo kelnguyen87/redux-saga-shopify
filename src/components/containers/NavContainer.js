@@ -27,7 +27,7 @@ const mapStateToProps = state => {
     return {
         cart: state.cart.cartItem,
         cartItemCount: state.cart.cartTotal,
-        usedCurrencyProp: state.cart.usedCurrency
+        usedCurrencyProp: state.currency.usedCurrency
     }
 }
 

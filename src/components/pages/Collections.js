@@ -33,7 +33,7 @@ const mapStateToProps = state => {
   return {
     collections: state.products.collections,
     loading :state.products.loading,
-    usedCurrencyProp: state.cart.usedCurrency,
+    usedCurrencyProp: state.currency.usedCurrency,
     cart: state.cart.cartItem,
     errorMsg:state.products.error
   }

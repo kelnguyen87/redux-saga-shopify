@@ -120,7 +120,7 @@ const mapStateToProps = state => {
         vatProp: state.cart.vat,
         cartTotalProp: state.cart.cartTotal,
         cartProductsProp: state.cart.cartItem,
-        usedCurrencyProp: state.cart.usedCurrency
+        usedCurrencyProp: state.currency.usedCurrency
     }
 }
 

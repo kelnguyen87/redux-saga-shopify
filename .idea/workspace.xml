@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006f4ed8-b338-423d-b45f-84bd48b588f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/currencyReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/toastReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/containers/CartList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/CartList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/containers/NavContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/NavContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/containers/ProductDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/ProductDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Collections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Collections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/CurrenyConverter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/CurrenyConverter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/cartReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/cartReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/reducers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,6 +48,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\React\shopping-cart\shopping-shopify\src\reducers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -68,6 +80,7 @@
       <workItem from="1596855715809" duration="43069000" />
       <workItem from="1597056280431" duration="2629000" />
       <workItem from="1597070547756" duration="3864000" />
+      <workItem from="1597155418422" duration="5148000" />
     </task>
     <servers />
   </component>
