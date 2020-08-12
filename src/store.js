@@ -13,14 +13,12 @@ const sagaMiddleware = createSagaMiddleware();
 
 export default (initialState) => {
   const persistedState = loadState();
-
    store = createStore(rootReducer, persistedState, composeWithDevTools(
        applyMiddleware(sagaMiddleware,logger),
       // other store enhancers if any
   ));
   sagaMiddleware.run(rootSaga);
-
-    store.subscribe(
+  store.subscribe(
       // Throttle: invokes a function at most once per every 1000 milliseconds.
       throttle(() => {
         saveState({
