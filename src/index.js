@@ -23,6 +23,8 @@ ReactDOM.render(
                render={routeProps => (<BasePage {...routeProps} pageName="collections" />)} />
         <Route path="/shopping-cart"
                render={routeProps => (<BasePage {...routeProps} pageName="ShoppingCart" />)} />
+        <Route path="/checkout"
+               render={routeProps => (<BasePage {...routeProps} pageName="CheckOut" />)} />
         <Route exact path="/product-detail/:productId"
                render={routeProps => (<BasePage {...routeProps} pageName="ProductDetails" />)} />
         <Route path="*"

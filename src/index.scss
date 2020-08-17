@@ -272,6 +272,53 @@ nav.navbar{
   min-height: 500px;
 }
 
+.shop-checkout-image {
+  width: 60px;
+  margin-top: 5px;
+}
+
+.list-group-item {
+  padding: .75rem .75rem;
+}
+
+
+.checkout-product-info h6 {
+  font-size: .95rem;
+  color: #000;
+}
+
+.checkout-product-info p {
+  margin-top: .2rem;
+  margin-bottom: 0;
+  font-size: .9rem;
+  color: #F17E0A;
+  font-weight: 600;
+}
+
+.checkout-product-info small {
+  color: #666;
+  font-weight: 600;
+}
+
+.shop-checkout-prices {
+  color: #000;
+  font-size: .9rem;
+}
+
+.shop-checkout-prices span {
+  font-weight: 600;
+}
+
+.shop-checkout-total {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.shop-checkout-total .shop-total {
+  color: #F17E0A;
+}
+
 /* ------------- modal --------------*/
 .shop-modal {
   position: fixed;

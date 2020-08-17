@@ -6,6 +6,7 @@ import PageNotFound from '../views/PageNotFound';
 import Header from '../views/Header';
 import NavContainer from '../containers/NavContainer';
 import Collection from "./Collections";
+import CheckOut from "./CheckOut";
 
 import {connect} from "react-redux";
 import {closeMaxProductModal} from "../../actions";
@@ -26,6 +27,9 @@ import Footer from "../views/Footer";
       case "ProductDetails":
         componentRendered = <ProductDetails {...this.props}/>;
         break;
+      case "CheckOut":
+            componentRendered = <CheckOut {...this.props}/>;
+            break;
       case "ShoppingCart":
         componentRendered = <ShoppingCart {...this.props}/>;
         break;

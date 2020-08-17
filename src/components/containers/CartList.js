@@ -99,7 +99,7 @@ class CartList extends Component {
                                     <Link to={'/'} className="btn btn-outline-primary">Continue shopping</Link>
                                 </div>
                                 <div className="btn-group" role="group" aria-label="Checkout">
-                                    <button type="button" className="btn btn-primary">Checkout</button>
+                                    <Link to={'/checkout'} className="btn btn-primary">Checkout</Link>
                                 </div>
                             </div>
                         </div>

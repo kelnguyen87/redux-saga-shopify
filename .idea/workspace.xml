@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006f4ed8-b338-423d-b45f-84bd48b588f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reducers/checkoutReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Checkout/CheckoutCartTotals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/CheckOut.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/containers/CartList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/containers/CartList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/BasePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/BasePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/reducers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +48,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\React\shopping-cart\shopping-shopify\src\components\pages" />
       <recent name="E:\React\shopping-cart\shopping-shopify\src\reducers" />
     </key>
   </component>
@@ -74,6 +78,8 @@
       <workItem from="1597056280431" duration="2629000" />
       <workItem from="1597070547756" duration="3864000" />
       <workItem from="1597155418422" duration="5439000" />
+      <workItem from="1597364588055" duration="101000" />
+      <workItem from="1597588434525" duration="6074000" />
     </task>
     <servers />
   </component>
